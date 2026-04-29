@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Lux Luz | Training Retreats in Portugal</title>
+  <meta name="description" content="A revenue opportunity for gyms, personal trainers and sports clubs. Run your own branded training week at Villa Lux Luz in Portugal." />
+  <style>
+    :root {
+      --teal: #2299ad;
+      --teal-dark: #126e80;
+      --orange: #f7941d;
+      --sun: #ffc20e;
+      --sand: #f8f1e6;
+      --cream: #fffaf5;
+      --navy: #12313c;
+      --text: #1f2933;
+      --muted: #61717f;
+      --white: #ffffff;
+      --shadow: 0 18px 40px rgba(18, 49, 60, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(255, 250, 242, 0.94);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(16, 32, 51, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand img {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 700;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(247, 148, 29, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(247, 148, 29, 0.32);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--navy);
+      box-shadow: none;
+      border: 1px solid rgba(16, 32, 51, 0.14);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      color: var(--white);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(18, 49, 60, 0.90), rgba(34, 153, 173, 0.52), rgba(18, 49, 60, 0.12)),
+        url("images/villa-hero.jpg") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,194,14,.22), transparent 26%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #ffe3aa;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      margin: 0 0 22px;
+      letter-spacing: -0.055em;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 23px);
+      max-width: 660px;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(16, 32, 51, 0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .numbers {
+      background: var(--sand);
+    }
+
+    .number-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .example-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .example-box h3 {
+      margin: 0 0 22px;
+      font-size: 26px;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .calc-row:last-child { border-bottom: 0; }
+
+    .calc-row span { color: rgba(255,255,255,0.76); }
+    .calc-row strong { font-size: 20px; color: #ffe3aa; }
+
+    .profit {
+      margin-top: 22px;
+      background: rgba(201,162,75,0.18);
+      border: 1px solid rgba(201,162,75,0.36);
+      padding: 22px;
+      border-radius: 20px;
+    }
+
+    .profit strong {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+      color: #ffe3aa;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.66);
+      margin-top: 16px;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--white);
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(16, 32, 51, 0.08);
+    }
+
+    .tick {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .photo-large, .photo-small {
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 430px;
+      background: #d9d2c4;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-large {
+      background: url("images/villa-pool.jpg") center / cover no-repeat;
+    }
+
+    .photo-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .photo-small {
+      min-height: 206px;
+    }
+
+    .photo-small.one { background: url("images/villa-gym.jpg") center / cover no-repeat; }
+    .photo-small.two { background: url("images/villa-dining.jpg") center / cover no-repeat; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      border: 1px solid rgba(16, 32, 51, 0.08);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .step h3 { margin: 0 0 8px; color: var(--navy); }
+    .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .form-section {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+    }
+
+    .form-section h2 {
+      color: #ffffff;
+    }
+
+    .form-section .lead {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* LEFT CONTACT COLUMN FIX */
+    .contact-copy,
+    .contact-copy *,
+    .form-section .contact-copy,
+    .form-section .contact-copy * {
+      color: #000000 !important;
+      opacity: 1 !important;
+    }
+
+    .form-grid > div p {
+      color: #ffffff;
+    }
+
+    .form-grid > div strong {
+      color: #ffffff;
+    }
+
+    /* If background looks too light on some screens, force darker fallback */
+    @media (max-width: 900px) {
+      .form-section {
+        background: var(--navy);
+      }
+    }
+
+    .form-section h2 {
+      color: var(--white);
+    }
+
+    .form-section .lead {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .form-section p {
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    .form-section strong {
+      color: #ffffff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-section h2 { color: var(--white); }
+    .form-section .lead { color: rgba(255,255,255,0.78); }
+
+    form {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(16, 32, 51, 0.16);
+      font: inherit;
+      margin-top: 6px;
+      background: #fbfbfb;
+    }
+
+    textarea { min-height: 108px; resize: vertical; }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .phone-row select,
+    .phone-row input {
+      margin-top: 0;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 6px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(34, 153, 173, 0.12);
+      border: 1px solid rgba(34, 153, 173, 0.28);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    footer {
+      background: #0b1624;
+      color: rgba(255,255,255,0.72);
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; }
+      .stat-strip, .cards, .steps, .number-grid, .gallery, .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .photo-large, .photo-small { min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Villa Lux Luz home"><img src="images/vll-logo.jpg" alt="Villa Lux Luz, Praia da Luz" /></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#numbers">The numbers</a>
+        <a href="#villa">The villa</a>
+        <a href="#how">How it works</a>
+        <a href="https://www.instagram.com/villaluxluz" target="_blank" rel="noopener" aria-label="Villa Lux Luz on Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/villaluxluz" target="_blank" rel="noopener" aria-label="Villa Lux Luz on Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.7c0-.8.5-1.2 1.3-1.2H17V3h-2.4C12.2 3 11 4.4 11 6.5v2H9v2.8h2V21h3v-9.7h2.4l.4-2.8H14z"/></svg>
+        </a>
+        <a class="button" href="#enquiry">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Villa Lux Luz training retreats">
+      <div class="container hero-content">
+        <div class="eyebrow">For gyms, trainers, golf, padel and tennis clubs</div>
+        <h1>Generate £8K–£18K from one week away with your members.</h1>
+        <p>A simple way to run your own branded training week in Portugal, using a private 10-bedroom villa in the Algarve.</p>
+        <div class="hero-actions">
+          <a class="button" href="#enquiry">Book a 15-minute call</a>
+          <a class="button secondary" href="#numbers">See the example numbers</a>
+        </div>
+        <div class="stat-strip" aria-label="Key facts">
+          <div class="stat"><strong>10 bedrooms</strong><span>Private villa, exclusive use</span></div>
+          <div class="stat"><strong>7 nights</strong><span>Saturday to Saturday stays</span></div>
+          <div class="stat"><strong>12–16 guests</strong><span>Ideal retreat group size</span></div>
+                <div style="margin-top: 24px; text-align: center;">
+          <a href="https://www.villaluxluz.com" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-weight:600; color: var(--teal-dark);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15 15 0 0 1 0 20"></path>
+              <path d="M12 2a15 15 0 0 0 0 20"></path>
+            </svg>
+            View full villa details & availability
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <h2>You already have the hard part.</h2>
+          <p class="lead">Your members trust you. They train with you. They already buy into your coaching. This gives you a way to turn that loyalty into a premium overseas event.</p>
+        </div>
+        <div class="cards">
+          <div class="card"><h3>Personal trainers</h3><p>Run a premium retreat for your strongest clients and create a new income stream.</p></div>
+          <div class="card"><h3>Gyms & bootcamps</h3><p>Turn your community into a branded week away with training, recovery and social time.</p></div>
+          <div class="card"><h3>Golf clubs</h3><p>Offer members a focused coaching week in the Algarve with space to relax between sessions.</p></div>
+          <div class="card"><h3>Padel & tennis clubs</h3><p>Create a warm-weather training trip for members who want more than another local session.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers" id="numbers">
+      <div class="container number-grid">
+        <div>
+          <div class="section-heading">
+            <h2>The simple commercial model.</h2>
+            <p class="lead">You bring your members, set the programme and decide the price. Villa Lux Luz provides the venue and optional support services.</p>
+          </div>
+          <div class="bullets">
+            <div class="bullet"><div class="tick">✓</div><div><strong>Charge per person</strong><br><span>Package your week at a premium price for your own community.</span></div></div>
+            <div class="bullet"><div class="tick">✓</div><div><strong>Keep control</strong><br><span>Your training, your schedule, your brand, your client experience.</span></div></div>
+            <div class="bullet"><div class="tick">✓</div><div><strong>Use clear numbers</strong><br><span>Before committing, we help you see whether the week stacks up financially.</span></div></div>
+          </div>
+        </div>
+        <div class="example-box">
+          <h3>Example retreat projection</h3>
+          <div class="calc-row"><span>Members attending</span><strong>14</strong></div>
+          <div class="calc-row"><span>Price per member</span><strong>£1,000</strong></div>
+          <div class="calc-row"><span>Total gross income</span><strong>£14,000</strong></div>
+          <div class="calc-row"><span>Estimated costs</span><strong>~£6,000</strong></div>
+          <div class="profit"><span>Example estimated margin</span><strong>~£8,000</strong></div>
+          <p class="note">Figures are illustrative only. Final costs depend on villa rate, chosen week, guest numbers, flights, food and optional extras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="villa">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Private Algarve base. Your event, your way.</h2>
+          <p class="lead">Villa Lux Luz is available on a self-catering basis, Saturday to Saturday, with optional extras to help shape the week around your clients.</p>
+        </div>
+        <div class="gallery" aria-label="Villa image gallery">
+          <div class="photo-large" role="img" aria-label="Villa pool and outdoor area"></div>
+          <div class="photo-stack">
+            <div class="photo-small one" role="img" aria-label="Gym and training space"></div>
+            <div class="photo-small two" role="img" aria-label="Dining and social space"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <h2>Optional extras available.</h2>
+          <p class="lead">Keep it simple with villa-only self catering, or build a more premium retreat using extras and local services.</p>
+        </div>
+        <div class="cards">
+          <div class="card"><h3>Villa extras</h3><p>Pool heating, sauna and gym, jacuzzi, towels, extra beds and luggage storage.</p></div>
+          <div class="card"><h3>Travel support</h3><p>Faro airport transfers and car hire can be arranged on request.</p></div>
+          <div class="card"><h3>Food options</h3><p>Private chef hire can be arranged, or you can keep the week fully self-catering.</p></div>
+          <div class="card"><h3>Activity support</h3><p>Bicycle hire and game equipment hire can be arranged for group downtime.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers" id="how">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How it works.</h2>
+          <p class="lead">A simple path from first conversation to a profitable retreat week.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>Run the numbers</h3><p>We help you estimate pricing, guest numbers and the potential margin.</p></div>
+          <div class="step"><h3>Choose your week</h3><p>Select a Saturday-to-Saturday week based on availability and your audience.</p></div>
+          <div class="step"><h3>Sell to members</h3><p>You promote the event to your own members, clients or club community.</p></div>
+          <div class="step"><h3>Host the retreat</h3><p>You run the programme while your group enjoys the villa and Algarve setting.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="enquiry">
+      <div class="container form-grid">
+        <div class="contact-copy">
+          <div class="section-heading">
+            <h2>Want to see if it works for your business?</h2>
+            <p class="lead">Send a quick enquiry and we’ll walk you through an example based on your members, your likely group size and your preferred dates.</p>
+          </div>
+          <p><strong>Prefer email?</strong><br>bookings@villaluxluz.com</p>
+          <p><strong>Prefer phone?</strong><br>+44 (0) 7983 626636</p>
+        </div>
+
+        <form id="leadForm" class="form-card" action="https://hooks.zapier.com/hooks/catch/27416203/uvia4ow/" method="POST">
+          <div class="form-row">
+            <label>First name
+              <input type="text" name="first_name" required />
+            </label>
+            <label>Last name
+              <input type="text" name="last_name" required />
+            </label>
+          </div>
+
+          <label class="form-full">Business / club name
+            <input type="text" name="business_name" required />
+          </label>
+
+          <div class="form-row">
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Phone
+              <div class="phone-row">
+                <select name="dial_code" aria-label="International dialling code">
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+353">🇮🇪 +353</option>
+                  <option value="+351">🇵🇹 +351</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+31">🇳🇱 +31</option>
+                </select>
+                <input type="tel" name="phone_local" placeholder="07983 626636" />
+              </div>
+              <input type="hidden" name="full_phone" id="fullPhone" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Business type
+              <select name="business_type" required>
+                <option value="">Select one</option>
+                <option>Personal Trainer</option>
+                <option>Gym / Bootcamp</option>
+                <option>Golf Club</option>
+                <option>Padel Club</option>
+                <option>Tennis Club</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Likely group size
+              <select name="group_size">
+                <option value="">Select one</option>
+                <option>8–11</option>
+                <option>12–16</option>
+                <option>17–20</option>
+                <option>20+</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="form-full">When are you looking to run your retreat?
+            <select name="timeline">
+              <option value="">Select one</option>
+              <option>Next 3 months</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Just exploring</option>
+            </select>
+          </label>
+
+          <label class="form-full">Message
+            <textarea id="message" name="message" placeholder="Tell us what kind of training week or retreat you have in mind."></textarea>
+          </label>
+
+          <input type="hidden" name="source" value="Landing Page" />
+          <input type="hidden" name="landing_page_url" value="Training Retreat Landing Page" />
+
+          <button class="button form-full" type="submit">Request details</button>
+          <div id="formStatus" class="form-status form-full">Thank you for your enquiry, one of our team will be in touch within the next 24 hours.</div>
+          <p class="disclaimer form-full">By submitting this form you agree to be contacted about Villa Lux Luz training retreat opportunities.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© Villa Lux Luz. Private villas | Private pools | Private service.</div>
+      <div class="footer-links">
+        <a href="https://www.villaluxluz.com" target="_blank" rel="noopener">www.villaluxluz.com</a>
+        <a href="https://www.instagram.com/villaluxluz" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/villaluxluz" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
+<script>
+    const leadForm = document.getElementById('leadForm');
+    const formStatus = document.getElementById('formStatus');
+
+    leadForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const dialCode = form.querySelector('[name="dial_code"]').value;
+      const localPhone = form.querySelector('[name="phone_local"]').value.trim();
+      const fullPhoneField = document.getElementById('fullPhone');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      let cleanedPhone = localPhone.split(' ').join('');
+      if (cleanedPhone.startsWith('0')) {
+        cleanedPhone = cleanedPhone.substring(1);
+      }
+      fullPhoneField.value = localPhone ? dialCode + ' ' + cleanedPhone : '';
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          mode: 'no-cors'
+        });
+
+        formStatus.style.display = 'block';
+        form.reset();
+      } catch (error) {
+        formStatus.style.display = 'block';
+        formStatus.textContent = 'Thank you for your enquiry, one of our team will be in touch within the next 24 hours.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Request details';
+      }
+    });
+  </script>
+</body>
+</html>
